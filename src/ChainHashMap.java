@@ -71,6 +71,7 @@ public class ChainHashMap<Key, Value> {
     public void delete(Key key) {
         isKeyNotNull(key);
         int i = hash(key);
+        /* Первый вариант
         int j = 0;
         for (Node node: list[i]) {
             if (!key.equals(node.key)) {
@@ -78,10 +79,14 @@ public class ChainHashMap<Key, Value> {
             } else {
                 list[i].remove(j);
             }
-        }
-        /*for (int j = 0; j < list[i].size(); j++) {
-            if (key.equals())
         }*/
+        //второй вариант
+        for (Node node : list[i]) {
+            if (key.equals(node.key)) {
+                list[i].remove(node);
+            }
+
+        }
     }
 
     @Override
