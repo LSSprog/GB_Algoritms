@@ -78,12 +78,14 @@ public class ChainHashMap<Key, Value> {
                 j++;
             } else {
                 list[i].remove(j);
+                size--; //добавил после коммента препода
             }
         }*/
         //второй вариант
         for (Node node : list[i]) {
             if (key.equals(node.key)) {
                 list[i].remove(node);
+                size--; //добавил после коммента препода
             }
 
         }
